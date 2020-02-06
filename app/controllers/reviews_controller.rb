@@ -28,7 +28,6 @@ class ReviewsController < ApplicationController
       render :edit
     end
   end
-end
 
   private
 
@@ -36,4 +35,3 @@ end
     params.require(:review).permit(:content, :title, :rating)
   end
 end
-

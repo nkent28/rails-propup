@@ -1,0 +1,31 @@
+<h1><%=current_user.email%> Bookings<h1>
+​
+<div>
+  <% @bookings.each |booking| do %>
+    <div>
+      <div>
+      <p><%=booking.prop.name%></p>
+      </div>
+​
+      <div>
+      <% booking.photos.each |photo| do%>
+        <%= cl_image_tag photo.key
+      <%end%>
+      </div>
+​
+      <div>
+      <p><%=booking.prop.description%></p>
+      </div>
+      <div>
+​
+      <div>
+        <p>Start: <%=booking.start_date%></p>
+      </div>
+      <div>
+        <p>End: <%=booking.end_date%></p>
+      </div>
+      </div>
+​
+    </div>
+  <%end%>
+</div>
