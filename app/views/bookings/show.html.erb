@@ -1,0 +1,21 @@
+<h1>Booking<h1>
+<div>
+  <div>
+    <p><%=@booking.prop.name%></p>
+  </div>
+  <div>
+    <% @booking.prop.photos.each |photo| do%>
+      <%= cl_image_tag photo.key
+    <%end%>
+  </div>
+  <div>
+    <p><%=@booking.prop.description%></p>
+  </div>
+  <div>
+    <p>Start: <%=booking.start_date%></p>
+  </div>
+  <div>
+    <p>End: <%=booking.end_date%></p>
+  </div>
+</div>
+
