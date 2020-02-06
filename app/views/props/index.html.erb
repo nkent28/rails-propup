@@ -1,0 +1,10 @@
+<h1> All Props </h1>
+
+<% @props.each do |prop| %>
+  <h2><%= prop.name %></h2>
+  <p><%= prop.description %></p>
+  <p><%= prop.price %></p>
+  <p><%= prop.availability %></p>
+  <p><%= prop.location %></p>
+  <p><%= prop.user.email %></p>
+<% end %>

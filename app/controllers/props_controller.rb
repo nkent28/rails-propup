@@ -6,7 +6,6 @@ def index
 end
 
 def show
-  # @prop = Prop.find(params[:id])
 end
 
 def new
@@ -14,13 +13,17 @@ def new
 end
 
 def create
-  @prop = Prop.new(prop_params)
-  @prop.save
-  # no need for app/views/props/create.html.erb
-  redirect_to prop_path(@prop)
-end
-prop
 
+  @prop = Prop.new(prop_params)
+  @prop.user = current_user
+
+  # no need for app/views/props/create.html.erb
+  if @prop.save
+    redirect_to prop_path(@prop)
+  else
+    render :new
+  end
+end
 
 def edit
   # @prop = Prop.find(params[:id])
@@ -28,10 +31,11 @@ end
 
 def update
   # @prop = Prop.find(params[:id])
-  @prop.update(prop_params)
-
+  if @prop.update(prop_params)
   # no need for app/views/props/update.html.erb
-  redirect_to prop_path(@prop)
+    redirect_to prop_path(@prop)
+  else :edit
+  end
 end
 
 def destroy
@@ -49,7 +53,7 @@ def set_prop
 end
 
 def prop_params
-  params.require(:prop).permit(:name, :description, :booking_status, :price, :availability, :location, :id_users, :photo)
+  params.require(:prop).permit(:name, :description, :price, :availability, :location, photos: [])
 end
 
 end
