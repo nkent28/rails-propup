@@ -2,6 +2,7 @@ class Prop < ApplicationRecord
   belongs_to :users
   has_many :bookings
   has_many_attached :photos
+  #has_many :reviews, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
