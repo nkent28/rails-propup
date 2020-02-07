@@ -2,8 +2,15 @@
 <h1> My Prop </h1>
 
 <h2><%= @prop.name %></h2>
+ <div>
+    <% @prop.photos.each do |photo|%>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill%>
+    <%end%>
+  </div>
 <p><%= @prop.description %></p>
 <p><%= @prop.price %></p>
 <p><%= @prop.availability %></p>
 <p><%= @prop.location %></p>
 <p><%= @prop.user.email %></p>
+
+<%= link_to "Book", new_prop_booking_path(@prop)%>

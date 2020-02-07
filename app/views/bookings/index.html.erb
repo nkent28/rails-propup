@@ -1,15 +1,15 @@
 <h1><%=current_user.email%> Bookings<h1>
 ​
 <div>
-  <% @bookings.each |booking| do %>
+  <%@bookings.each do |booking|%>
     <div>
       <div>
       <p><%=booking.prop.name%></p>
       </div>
 ​
       <div>
-      <% booking.photos.each |photo| do%>
-        <%= cl_image_tag photo.key
+      <% booking.prop.photos.each do |photo|%>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill%>
       <%end%>
       </div>
 ​
@@ -29,3 +29,5 @@
     </div>
   <%end%>
 </div>
+
+
