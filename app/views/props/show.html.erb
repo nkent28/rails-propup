@@ -1,4 +1,3 @@
-
 <h1> My Prop </h1>
 
 <h2><%= @prop.name %></h2>
@@ -13,4 +12,9 @@
 <p><%= @prop.location %></p>
 <p><%= @prop.user.email %></p>
 
+<% if current_user == @prop.user%>
+  <%= link_to "Edit", edit_prop_path(@prop)%>
+<%end%>
+
 <%= link_to "Book", new_prop_booking_path(@prop)%>
+<%= link_to "Delete", prop_path(@prop), method: :delete, data: { confirm: 'Are you sure?' }%>
