@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  #before_action :set_booking, only[:show, :edit, :destroy]
-  #before_action :set_prop, only[:new, :create]
+  before_action :set_booking, only: [:show, :edit, :destroy]
+
   def index
     @bookings = current_user.bookings
   end
@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.prop = @prop
+    @booking.prop = Prop.find(params[:prop_id])
     @booking.user = current_user
     if @booking.save
       redirect_to booking_path(@booking)
@@ -48,10 +48,6 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
-  end
-
-  def set_prop
-    @prop = Prop.find(params[:prop_id])
   end
 
   def booking_params

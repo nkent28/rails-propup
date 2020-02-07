@@ -7,4 +7,13 @@
   <p><%= prop.availability %></p>
   <p><%= prop.location %></p>
   <p><%= prop.user.email %></p>
+  <% prop.photos.each do |photo|%>
+    <div>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill%>
+
+    </div>
+  <%end%>
+  <div>
+    <%= link_to "View", prop_path(prop)%>
+  </div>
 <% end %>
