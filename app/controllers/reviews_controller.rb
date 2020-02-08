@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
-  def index
-    @reviews = Review.all
+  def show
   end
 
   def new
@@ -13,12 +12,11 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     @review.save
-    redirect_to booking_path(@booking)
+    redirect_to new_booking_review_path(@review)
   end
 
   def edit
     @review = Review.find(params[:id])
-    #check details
   end
 
   def update
@@ -27,6 +25,11 @@ class ReviewsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
   end
 
   private
