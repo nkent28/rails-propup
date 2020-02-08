@@ -9,11 +9,14 @@
 
 require "open-uri"
 
+Booking.destroy_all
+Prop.destroy_all
+User.destroy_all
 
 # fake bouquet
 puts "creating users"
-User.create(email: "maria@cool.com", password: 123456)
-User.create(email: "lucy@cool.com", password: 123456)
+User.create(email: "maria@cool.com", password: "123456")
+User.create(email: "lucy@cool.com", password: "123456")
 
 puts "creating props"
 file = URI.open('https://res.cloudinary.com/dmwa29qvx/image/upload/v1581174946/fake_bouquet_q4rugt.jpg')
