@@ -1,1 +1,13 @@
-<%= render 'form' %>
+<%= simple_form_for (@prop) do |f| %>
+  <%= f.input :name %>
+  <%=f.input :photos, as: :file, input_html: { multiple: true }%>
+  <%= f.input :description %>
+
+<!-- Qs: How to add currency -->
+  <%= f.input :price %>
+
+<!-- Qs: To check how to add calendar -->
+  <%= f.input :availability %>
+  <%= f.input :location %>
+  <%= f.submit "Update Prop", class: "btn btn-primary" %>
+<% end %>
