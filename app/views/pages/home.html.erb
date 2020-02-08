@@ -1,2 +1,34 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1571268373914-e888c6dafeff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <h1>PropUp - Your onestop shop for hosting an event</h1>
+    <%= link_to "List a Prop", new_prop_path, :class => "btn btn-gradient" %>
+  </div>
+</div>
+
+<h1>Props</h1>
+<% @props.each do |prop| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 text-center">
+        <div class="card-trip">
+        <% prop.photos.each do |photo|%>
+          <div>
+            <%= cl_image_tag photo.key, crop: :fill, class: "prop-photo" %>
+
+          </div>
+        <%end%>
+        <div class="">
+          <h2><%= prop.name %></h2>
+          <p><%= prop.description %></p>
+          <p><%= prop.price %></p>
+          <p><%= prop.availability %></p>
+          <p><%= prop.location %></p>
+          <p><%= prop.user.email %></p>
+        </div>
+        <%= link_to "View", prop_path(prop), :class => "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+

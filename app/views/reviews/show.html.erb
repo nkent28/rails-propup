@@ -1,5 +1,32 @@
 <h1>Review</h1>
+<div>
+  <div>
+    <p><%= @review.title %></p>
+  </div>
+  <div>
+    <p><%= @review.content %></p>
+  </div>
+  <div>
+    <p><%= @review.rating %></p>
+  </div>
 
-<p><%= @review.title %></p>
-<p><%= @review.content %></p>
-<p><%= @review.rating %></p>
+<h1>Booking<h1>
+<div>
+  <div>
+    <p><%=@booking.prop.name%></p>
+  </div>
+   <div>
+    <% @booking.prop.photos.each do |photo|%>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill%>
+    <%end%>
+  </div>
+  <div>
+    <p><%=@booking.prop.description%></p>
+  </div>
+  <div>
+    <p>Start: <%=@booking.start_date%></p>
+  </div>
+  <div>
+    <p>End: <%=@booking.end_date%></p>
+  </div>
+</div>
