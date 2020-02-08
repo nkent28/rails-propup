@@ -19,6 +19,9 @@ class BookingsController < ApplicationController
     @booking.prop = Prop.find(params[:prop_id])
     @booking.user = current_user
     if @booking.save
+      @booking.days = (@booking.end_date - @booking.start_date).to_i
+      @booking.price = @booking.days * @booking.prop.price
+      raise
       redirect_to booking_path(@booking)
     else
       render :new

@@ -7,8 +7,7 @@
     <%end%>
   </div>
 <p><%= @prop.description %></p>
-<p><%= @prop.price %></p>
-<p><%= @prop.availability %></p>
+<p>£<%= @prop.price %></p>
 <p><%= @prop.location %></p>
 <p><%= @prop.user.email %></p>
 
@@ -18,3 +17,5 @@
 
 <%= link_to "Book", new_prop_booking_path(@prop), :class => "btn btn-primary"%>
 <%= link_to "Delete", prop_path(@prop), :class => "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+
