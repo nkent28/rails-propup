@@ -86,5 +86,3 @@ prop.photos.attach(io: file, filename: 'fake_bouquet.jpg', content_type: 'image/
 prop.save!
 
 
-puts "create bookings"
-booking = Booking.new(start_date: Sun, 09 Feb 2020, end_date: Sun, 09 Feb 2020,)
