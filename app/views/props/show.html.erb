@@ -18,6 +18,9 @@
 <p>£<%= @prop.price %></p>
 <p><%= @prop.location %></p>
 <p><%= @prop.user.email %></p>
+    <div class="map">
+  <p> Map here</p>
+</div>
 <% if current_user == @prop.user%>
   <%= link_to "Edit", edit_prop_path(@prop), :class => "btn btn-primary"%>
   <%= link_to "Book", new_prop_booking_path(@prop), :class => "btn btn-primary"%>
@@ -26,6 +29,5 @@
  </div>
 </div>
 </div>
-
 
 
