@@ -1,21 +1,31 @@
+<div class="banner2" style="background-image: url(https://images.unsplash.com/photo-1511184150666-9bb7d41a88f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6 my-3">
+    <div class="card" style="width: 28rem;, height: 28rem;">
+      <div class="text-center">
 <h1> My Prop </h1>
-
 <h2><%= @prop.name %></h2>
  <div>
     <% @prop.photos.each do |photo|%>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill%>
     <%end%>
   </div>
+</div>
+ <div class="card-body">
+  <div class="text-center">
 <p><%= @prop.description %></p>
 <p>£<%= @prop.price %></p>
 <p><%= @prop.location %></p>
 <p><%= @prop.user.email %></p>
-
 <% if current_user == @prop.user%>
   <%= link_to "Edit", edit_prop_path(@prop), :class => "btn btn-primary"%>
-<%end%>
-
-<%= link_to "Book", new_prop_booking_path(@prop), :class => "btn btn-primary"%>
+  <%= link_to "Book", new_prop_booking_path(@prop), :class => "btn btn-primary"%>
 <%= link_to "Delete", prop_path(@prop), :class => "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' }%>
+<%end%>
+ </div>
+</div>
+</div>
+
 
 
