@@ -1,3 +1,9 @@
+<div class="banner2" style="background-image: url(https://images.unsplash.com/photo-1511184150666-9bb7d41a88f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6 my-3">
+    <div class="card row justify-content-center" style="width: 35rem;">
+      <div class="text-center">
 <h1><%=current_user.email%> Bookings<h1>
 ​
 <div>
@@ -29,11 +35,13 @@
       </div>
       </div>
       <div>
-        <%= link_to "View", booking_path(booking)%>
+        <%= link_to "View", booking_path(booking), :class => "btn btn-primary"%>
       </div>
 ​
     </div>
   <%end%>
+</div>
+</div>
 </div>
 
 
