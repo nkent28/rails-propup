@@ -16,6 +16,13 @@ before_action :set_prop, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    @markers =
+      [{
+        lat: @prop.latitude,
+        lng: @prop.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { prop: @prop }),
+        image_url: helpers.asset_url('logo1.png')
+      }]
   end
 
   def new

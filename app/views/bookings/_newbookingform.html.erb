@@ -2,8 +2,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6 my-3">
-    <div class="card row justify-content-center" style="width: 35rem; height: 18rem;">
-      <div class="text-center">
+    <div class="card" style="width: 35rem; height: 18rem;">
+<div class="search-form box-shadow p-4">
+   <div class="text-center">
 <h1>Booking</h1>
 </div>
 <%= simple_form_for [@prop, @booking] do |f|%>
@@ -11,6 +12,8 @@
   <%=f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"}%>
   <%=f.submit "Make a booking", class: "btn btn-primary btn-lg btn-block"%>
 <%end%>
+</span>
+</div>
 </div>
 </div>
 
