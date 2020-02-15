@@ -1,12 +1,12 @@
-<div class="banner2" style="background-image: url(https://images.unsplash.com/photo-1523757682081-a78e60705cda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80);">
+<div class="banner3" style="background-image: url(https://images.unsplash.com/photo-1523757682081-a78e60705cda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80);">
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6 my-3">
     <div class="card row justify-content-center" style="width: 35rem;">
-      <div class="text-center">
+      <div class="search-form box-shadow p-4">
+        <div class="text-center">
         <h1>Review</h1>
       </div>
-      <div class="search-form box-shadow p-4">
 <%= simple_form_for [@booking, @review] do |f| %>
 <%= f.input :title %>
 <%= f.input :content  %>
