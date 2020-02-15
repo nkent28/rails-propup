@@ -6,7 +6,7 @@
       <div class="col-12 col-lg-6 my-3">
         <div class="card row justify-content-center" style="width: 35rem;">
           <div class="text-center">
-            <h1><%=current_user.email%> Bookings<h1>
+            <h1>My Bookings<h1>
     ​
             <%@bookings.each do |booking|%>
             <div class="cards">
@@ -18,7 +18,7 @@
                 <div class="card-infos">
                   <p><%=booking.prop.description%></p>
                   <p>Start: <%=booking.start_date.strftime('%d-%m-%Y')%></p>
-                  <p>End: <%=booking.end_date%></p>
+                  <p>End: <%=booking.end_date.strftime('%d-%m-%Y')%></p>
                   <p>Price: £<%=booking.price%></p>
                   <%= link_to "View", booking_path(booking), :class => "btn btn-primary"%>
                 </div>
