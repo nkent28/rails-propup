@@ -1,47 +1,88 @@
-.card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 8px;
-}
+// .card-trip {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   border-radius: 8px;
+// }
 
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
+// .card-trip > img {
+//   height: 200px;
+//   width: 100%;
+//   object-fit: cover;
+//   width: 50%;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
-.prop-photo {
-  max-width: 80%;
-}
+// .prop-photo {
+//   max-width: 80%;
+// }
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+// .card-trip h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
 
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
+// .card-trip p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
 
 
-.card-trip .card-trip-infos {
-  padding: 16px;
+// .card-trip .card-trip-infos {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+// }
+
+// .card-trip-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
+
+// .card2 {
+//   background-size: cover;
+//   background-position: center;
+//   height: 150px;
+//   border-radius: 1px;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   font-size: 22px;
+//   color: white;
+//   font-weight: bolder;
+//   text-shadow: 0 0 10px rgba(0,0,0,0.7);
+// }
+
+.card-info {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  // background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 32px;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+.card-infos p {
+  margin-top: 12px;
+  font-size: 16px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
