@@ -14,6 +14,11 @@ before_action :set_prop, only: [:show, :edit, :update, :destroy]
       }
     end
 
+
+  def myprops
+    @props = Prop.all.where(user: current_user)
+  end
+
     # if params[:query].present?
     #   @props = Prop.where(title: params[:query])
     # else

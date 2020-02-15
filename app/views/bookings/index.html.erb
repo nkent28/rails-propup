@@ -6,24 +6,22 @@
       <div class="col-12 col-lg-6 my-3">
         <div class="card row justify-content-center" style="width: 35rem;">
           <div class="text-center">
-            <h1><%=current_user.email%> Bookings<h1>
+            <h1>Bookings</h1>
     ​
             <%@bookings.each do |booking|%>
-            <div class="cards">
-              <div class="card">
-                <p><%=booking.prop.name%></p>
+              <div class="card-info">
+                <h1><%=booking.prop.name%></h1>
                 <% booking.prop.photos.each do |photo|%>
                   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill%>
                 <%end%>
                 <div class="card-infos">
                   <p><%=booking.prop.description%></p>
                   <p>Start: <%=booking.start_date.strftime('%d-%m-%Y')%></p>
-                  <p>End: <%=booking.end_date%></p>
+                  <p>End: <%=booking.end_date.strftime('%d-%m-%Y')%></p>
                   <p>Price: £<%=booking.price%></p>
                   <%= link_to "View", booking_path(booking), :class => "btn btn-primary"%>
                 </div>
               </div>
-            </div>
             <%end%>
         </div>
       </div>
