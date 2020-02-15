@@ -3,23 +3,16 @@
   <div class="container col">
     <div class="row justify-content-center w-50">
         <div class="search-form box-shadow p-4 col-6">
-          <%= simple_form_for(:search) do |f|%>
+          <%= simple_form_for(:search, url: props_path, method: :get) do |f|%>
             <h1>Book unique props for your special event.</h1>
             <div class="form-group">
               <%=f.input :location, as: :string, label: "Where", placeholder:"London"%>
             </div>
             <div class="form-group">
-              <%=f.input :category, collection: @categories, label: "Event type"%>
+              <%=f.input :name, as: :string, label: "Prop name"%>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <%=f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, label: 'Start date', class: "form-control" %>
-              </div>
-              <div class="form-group col-md-6">
-                <%=f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"}, label: 'End date', class: "form-control"%>
-              </div>
-            </div>
-            <%=f.submit "Search", class: "btn btn-primary w-100"%>
+
+            <%=f.submit "Browse", class: "btn btn-primary w-100"%>
           <%end%>
         </div>
       </div>
