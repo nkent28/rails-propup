@@ -6,6 +6,17 @@
       <div class="text-center">
 <h1> All Props </h1>
 
+<%= form_tag props_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a prop"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+
 <% @props.each do |prop| %>
   <h2><%= prop.name %></h2>
   <p><%= prop.description %></p>

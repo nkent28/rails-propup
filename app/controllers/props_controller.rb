@@ -13,6 +13,20 @@ before_action :set_prop, only: [:show, :edit, :update, :destroy]
         image_url: helpers.asset_url('logo1.png')
       }
     end
+
+    # if params[:query].present?
+    #   @props = Prop.where(title: params[:query])
+    # else
+    #   @props = Prop.all
+    # end
+
+    # if params[:query].present?
+    #   sql_query = "name ILIKE :query OR syllabus ILIKE :query"
+    #   @props = Prop.where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @props = Prop.all
+    # end
+
   end
 
   def show
