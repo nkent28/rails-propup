@@ -14,3 +14,34 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-prop {
+  background: radial-gradient(circle at center center, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%) !important;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 20px;
+  color: white;
+  width: 30%;
+}
+
+.btn-prop:hover {
+  background: blue;
+  color: blue;
+}
+
+.btn-form {
+  background: radial-gradient(circle at center center, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%) !important;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 20px;
+  color: white;
+  width: 80%;
+  margin-left: 43px;
+
+}

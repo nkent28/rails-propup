@@ -37,6 +37,7 @@
   color: white;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  text-align: center;
 }
 
 .card-prop a {
@@ -51,7 +52,84 @@
   text-decoration: none;
 }
 
+.card {
+  margin-top: 14px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding-bottom: 8px;
+}
 
+/**********Fonts for text************/
 
+.prop-name {
+  font-family: stratos,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,"\5FAE\8F6F\96C5\9ED1\4F53",Hiragino Sans GB,"\51AC\9752\9ED1\4F53",sans-serif;
+}
 
+.booking-name {
+  font-family: "Roboto Mono", "monospace";
+}
 
+.booking-details {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  font-size: 24px;
+}
+/*********** Sign up forms ************/
+
+.card2 {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 2px;
+    margin-top: 100px;
+    opacity: 0.9;
+  }
+
+  /********** Booking form ***************/
+
+  .card3 {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 2px;
+    margin-top: 160px;
+  }
+
+/************ Badge ****************/
+
+  .badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 2px;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background: radial-gradient(circle at center center, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%) !important;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    border: 1px solid #0F60C4;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: white;
+    width: 65%;
+    margin-top: 10px;
+    height: 44px;
+}

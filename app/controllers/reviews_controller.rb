@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path(@booking)
     else
       render :edit
     end

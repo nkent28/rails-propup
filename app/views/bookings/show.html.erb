@@ -1,37 +1,42 @@
-<div class="banner2" style="background-image: url(https://images.unsplash.com/photo-1511184150666-9bb7d41a88f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-6 my-3">
-    <div class="card row justify-content-center" style="width: 35rem;">
-      <div class="text-center">
-<h1>Your Booking<h1>
-<div>
-  <div>
-    <p><%=@booking.prop.name%></p>
+<div class="banner5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6 my-3">
+        <div class="card row justify-content-center" style="width: 35rem;">
+          <div class="text-center">
+            <small>
+              <span class="badge">
+                <h2 class="booking-name">Booking Confirmation<h2>
+              </span>
+            </small>
+            <div>
+              <div>
+                <p><%=@booking.prop.name%></p>
+              </div>
+                <div>
+                  <% @booking.prop.photos.each do |photo|%>
+                  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill%>
+                <%end%>
+                </div>
+                  <div>
+                    <p class="booking-details"><%=@booking.prop.description%></p>
+                  </div>
+                    <div>
+                      <p class="booking-details">Start: <%=@booking.start_date.strftime('%d-%m-%Y')%></p>
+                    </div>
+                      <div>
+                        <p class="booking-details">End: <%=@booking.end_date.strftime('%d-%m-%Y')%></p>
+                      </div>
+                        <div>
+                          <p class="booking-details">Price: £<%=@booking.prop.price%></p>
+                        </div>
+            </div>
+              <%= link_to "Edit", edit_booking_path(@booking), :class => "btn-prop"%>
+              <%= link_to "Delete", booking_path(@booking), :class => "btn-prop", method: :delete, data: { confirm: 'Are you sure?' }%>
+              <%= link_to "Add a review", new_booking_review_path(@booking), :class => "btn-prop"%>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-   <div>
-    <% @booking.prop.photos.each do |photo|%>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill%>
-    <%end%>
-  </div>
-  <div>
-    <p><%=@booking.prop.description%></p>
-  </div>
-  <div>
-    <p>Start: <%=@booking.start_date.strftime('%d-%m-%Y')%></p>
-  </div>
-  <div>
-    <p>End: <%=@booking.end_date.strftime('%d-%m-%Y')%></p>
-  </div>
-  <div>
-    <p>Price: £<%=@booking.price%></p>
-  </div>
-</div>
-
-<%= link_to "Edit", edit_booking_path(@booking), :class => "btn btn-primary"%>
-<%= link_to "Delete", booking_path(@booking), :class => "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' }%>
-
-
-<%= link_to "Add a review", new_booking_review_path(@booking), :class => "btn btn-primary"%>
-</div>
 </div>
