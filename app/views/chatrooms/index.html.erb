@@ -1,0 +1,21 @@
+<div class="banner7">
+  <div class="content d-flex">
+    <div class="card-body">
+      <div class="text-center">
+        <h1>Messages</h1>
+          <%@chatroom.each do |chatroom|%>
+            <div class="card-info">
+              <p>Message Subject: <%= link_to "#{chatroom.name}", chatroom_path(chatroom) %></p>
+              <div class="bu">
+              <%= link_to "Delete", chatroom_path(chatroom), :class => "btn-form3", method: :delete, data: { confirm: 'Are you sure?'}%>
+              </div>
+            </div>
+            <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

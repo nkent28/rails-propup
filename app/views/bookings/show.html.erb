@@ -1,8 +1,8 @@
-<div class="banner5">
+<div class="banner7">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-6 my-3">
-        <div class="card row justify-content-center" style="width: 38rem;">
+        <div class="card4 row justify-content-center" style="width: 38rem;">
           <div class="text-center">
             <small>
               <span class="badge">
@@ -22,16 +22,16 @@
                     <p class="booking-details"><%=@booking.prop.description%></p>
                   </div>
                     <div>
-                      <p class="booking-details">Pick-up Location: <%=@booking.prop.location%></p>
-                     </div>
+                      <p class="booking-details"><em>Pick-up Location: </em><%=@booking.prop.location%></p>
+                    </div>
                       <div>
-                        <p class="booking-details">Start: <%=@booking.start_date.strftime('%d-%m-%Y')%></p>
+                        <p class="booking-details"><em>Start: </em> <%=@booking.start_date.strftime('%d-%m-%Y')%></p>
                       </div>
                         <div>
-                          <p class="booking-details">End: <%=@booking.end_date.strftime('%d-%m-%Y')%></p>
+                          <p class="booking-details"><em>End: </em><%=@booking.end_date.strftime('%d-%m-%Y')%></p>
                         </div>
                           <div>
-                            <p class="booking-details">Price: £<%=@booking.prop.price%></p>
+                            <p class="booking-details"><em>Price: </em> £<%=@booking.prop.price%></p>
                           </div>
             </div>
               <%= link_to "Edit", edit_booking_path(@booking), :class => "btn-prop"%>
@@ -42,4 +42,35 @@
       </div>
     </div>
   </div>
+  <div class="text-center">
+    <h3>Review</h3>
+      <% if @booking.reviews.empty? %>
+      <p>Review your booked prop!</p>
+      <% else %>
+      <ul class="list-group">
+        <% @booking.reviews.each do |review| %>
+          <li class="align-items-center">
+            <%= review.content %>
+            <div class="align-items-center text-center">
+              <span>
+              <% counter = 0 %>
+              <% 5.times do %>
+              <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+              <% counter += 1 %>
+              <% end %>
+              </span>
+              <div class="remove-btn">
+              <%= link_to "Remove",
+                  review_path(review),
+                  :class => "btn btn-light",
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 </div>
+

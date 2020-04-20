@@ -12,8 +12,9 @@ User.destroy_all
 
 # fake bouquet
 puts "creating users"
-User.create(email: "maria@cool.com", password: "123456")
-User.create(email: "lucy@cool.com", password: "123456")
+Chatroom.create! name: 'general'
+User.create(email: "maria@cool.com", password: "123456", nickname: "mariac")
+User.create(email: "lucy@cool.com", password: "123456", nickname: "lucyc")
 
 puts "creating props"
 file = URI.open('https://res.cloudinary.com/dmwa29qvx/image/upload/v1581174946/fake_bouquet_q4rugt.jpg')
@@ -54,7 +55,7 @@ prop.save!
 # Mummy 1
 
 file = URI.open('https://res.cloudinary.com/dmwa29qvx/image/upload/v1581174946/mummy_lg5owo.jpg')
-prop = Prop.new(name: 'Large Tutankhamun Egyptian Mummy Prop', description: "Perfect for any Egyptian themed event or party.", price: 150, availability: 'Now', location: "74 Lordship Lane, London", user: User.first )
+prop = Prop.new(name: 'Large Egyptian Mummy Prop', description: "Perfect for any Egyptian themed event or party.", price: 150, availability: 'Now', location: "74 Lordship Lane, London", user: User.first )
 prop.photos.attach(io: file, filename: 'fmummy_lg5owo.jpg', content_type: 'image/jpg')
 prop.save!
 
@@ -69,14 +70,14 @@ prop.save!
 # Statue 1
 
 file = URI.open('https://res.cloudinary.com/dmwa29qvx/image/upload/v1581174946/egyptian_statue1_dot7pb.jpg')
-prop = Prop.new(name: 'Large Human/Animal Hybrid statue', description: "Perfect for any grand event or party", price: 90, availability: 'Now', location: "69 St. Marychurch Street, London", user: User.first )
+prop = Prop.new(name: 'Large Hybrid statue', description: "Perfect for any grand event or party", price: 90, availability: 'Now', location: "69 St. Marychurch Street, London", user: User.first )
 prop.photos.attach(io: file, filename: 'egyptian_statue1_dot7pb.jpg', content_type: 'image/jpg')
 prop.save!
 
 # Statue 2
 
 file = URI.open('https://res.cloudinary.com/dmwa29qvx/image/upload/v1581174946/egyptian_statue2_gfullm.jpg')
-prop = Prop.new(name: 'Small Human/Animal Hybrid statue', description: "Perfect for any grand event or party", price: 70, availability: 'Now', location: "67 Renfrew Rd, Ipswich", user: User.first )
+prop = Prop.new(name: 'Small Hybrid statue', description: "Perfect for any grand event or party", price: 70, availability: 'Now', location: "67 Renfrew Rd, Ipswich", user: User.first )
 prop.photos.attach(io: file, filename: 'fake_bouquet.jpg', content_type: 'image/jpg')
 prop.save!
 

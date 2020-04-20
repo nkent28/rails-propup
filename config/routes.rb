@@ -7,9 +7,15 @@ Rails.application.routes.draw do
   resources :props do
     resources :bookings, only: [:new, :create]
   end
+  resources :reviews, only: [:destroy]
+  resources :chatrooms, only:[:destroy]
 
-  resources :bookings, except: [:new, :create] do
-    resources :reviews, only: [:new, :create, :edit, :update, :index, :destroy]
+  resources :chatrooms, only: [:index, :show, :new, :create] do
+    resources :messages, only: [:create, :show]
   end
 
+  resources :bookings, except: [:new, :create] do
+    resources :reviews, only: [:new, :create, :edit, :update, :index]
+  end
 end
+
