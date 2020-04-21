@@ -32,12 +32,9 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = params[:booking]
-    if @booking.update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
       redirect_to booking_path(@booking)
-    else
-      render :edit
-    end
   end
 
   def destroy

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :props do
     resources :bookings, only: [:new, :create]
   end
-  resources :reviews, only: [:destroy]
+  resources :reviews, only: [:destroy, :edit]
   resources :chatrooms, only:[:destroy]
 
   resources :chatrooms, only: [:index, :show, :new, :create] do
