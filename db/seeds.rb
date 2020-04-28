@@ -81,7 +81,26 @@ prop = Prop.new(name: 'Small Hybrid statue', description: "Perfect for any grand
 prop.photos.attach(io: file, filename: 'fake_bouquet.jpg', content_type: 'image/jpg')
 prop.save!
 
+# Hollywood backdrop
 
+file = URI.open('https://res.cloudinary.com/dsckp7mat/image/upload/v1587132170/3CVHUXnJMrX4FRN2hupWrksB.jpg')
+prop = Prop.new(name: 'Hollywood Backdrop', description: "Add tinseltown to your party!", price: 65, availability: 'Now', location: "83 Upper St, London, N1 0NU", user: User.first )
+prop.photos.attach(io: file, filename: '3CVHUXnJMrX4FRN2hupWrksB.jpg', content_type: 'image/jpg')
+prop.save!
+
+# Candyland backdrop
+
+file = URI.open('https://res.cloudinary.com/dsckp7mat/image/upload/v1587132089/k3fsjgStZgHwVtaNzWmDDw9i.jpg')
+prop = Prop.new(name: 'Candyland Backdrop', description: "Add Candyland to your child's party!", price: 65, availability: 'Now', location: "54 Islington Park St, London, N1 1PX", user: User.first )
+prop.photos.attach(io: file, filename: 'k3fsjgStZgHwVtaNzWmDDw9i.jpg', content_type: 'image/jpg')
+prop.save!
+
+# Disco backdrop
+
+file = URI.open('https://res.cloudinary.com/dsckp7mat/image/upload/v1587132015/oqWJq6HwwFvLjFAYbKY16u5W.jpg')
+prop = Prop.new(name: 'Disco Backdrop', description: "Add Saturday Night Fever to your party!", price: 65, availability: 'Now', location: "60 Cross Street, London, N1 2BA", user: User.first )
+prop.photos.attach(io: file, filename: 'oqWJq6HwwFvLjFAYbKY16u5W.jpg', content_type: 'image/jpg')
+prop.save!
 
 
 
