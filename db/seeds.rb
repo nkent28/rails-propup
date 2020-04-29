@@ -12,9 +12,8 @@ User.destroy_all
 
 # fake bouquet
 puts "creating users"
-Chatroom.create! name: 'general'
-User.create(email: "maria@cool.com", password: "123456", nickname: "mariac")
-User.create(email: "lucy@cool.com", password: "123456", nickname: "lucyc")
+User.create(email: "maria@cool.com", password: "123456", first_name: "Maria", last_name: "Stefan", nickname: "marias")
+User.create(email: "lucy@cool.com", password: "123456", first_name: "Lucy", last_name: "Williamson", nickname: "lucyw")
 
 puts "creating props"
 file = URI.open('https://res.cloudinary.com/dmwa29qvx/image/upload/v1581174946/fake_bouquet_q4rugt.jpg')
