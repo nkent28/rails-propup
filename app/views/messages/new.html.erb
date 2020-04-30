@@ -1,0 +1,19 @@
+<div class="banner7">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6 my-3">
+        <div class="text-center">
+          <div class="card5 py-4 row justify-content-center" style="width: 38rem;">
+            <h1>Message Subject</h1><p>(Include Prop name & date)</p>
+            <%= simple_form_for (@chatroom) do |f| %>
+            <div class="form-group mx-3">
+              <%= f.input :name %>
+              <%= f.submit "Add!", class: 'btn-prop' %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
